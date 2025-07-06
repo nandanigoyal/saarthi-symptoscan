@@ -8,7 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Allow React frontend
+    allow_origins=["http://localhost:3000",
+    "https://symptoscan-2mg1.onrender.com"],  # Allow React frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
