@@ -1,5 +1,5 @@
 export const getDiagnosis = async (symptoms: string[]) => {
-  const response = await fetch("http://127.0.0.1:8000/predict", {
+  const response = await fetch("https://saarthi-symptoscan.onrender.com/predict", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,7 +12,7 @@ export const getDiagnosis = async (symptoms: string[]) => {
 };
 
 export const getTips = async () => {
-  const res = await fetch("http://127.0.0.1:8000/get-tips");
+  const res = await fetch("https://saarthi-symptoscan.onrender.com/get-tips");
   if (!res.ok) throw new Error("Failed to fetch tips");
   return await res.json();
 };
