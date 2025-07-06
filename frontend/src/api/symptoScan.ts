@@ -1,5 +1,7 @@
+const API_BASE = process.env.REACT_APP_API_URL;
+
 export const getDiagnosis = async (symptoms: string[]) => {
-  const response = await fetch("https://saarthi-symptoscan.onrender.com/predict", {
+  const response = await fetch(`${API_BASE}/predict`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,8 +14,7 @@ export const getDiagnosis = async (symptoms: string[]) => {
 };
 
 export const getTips = async () => {
-  const res = await fetch("https://saarthi-symptoscan.onrender.com/get-tips");
+  const res = await fetch(`${API_BASE}/get-tips`);
   if (!res.ok) throw new Error("Failed to fetch tips");
   return await res.json();
 };
-
